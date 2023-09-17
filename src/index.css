@@ -1,0 +1,1131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --top-header-bg-color: #c2c2af;
+  --main-color: #333;
+  --top-banner-bg-color: #252525;
+  --main-bg-color: #fffef2;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button,
+img,
+input,
+select {
+  display: inline-block;
+}
+
+/*** Re-usable Code Start ***/
+.right {
+  text-align: right;
+}
+
+.common-upper-heading {
+  color: var(--main-color);
+  line-height: 1.7;
+  font-size: 1.6rem;
+  font-family: Suisse, sans-serif;
+  font-weight: 700;
+}
+
+.common-heading {
+  font-family: Zapf Humanist, serif;
+  color: var(--main-color);
+  line-height: 1.33;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.common-para {
+  color: var(--main-color);
+  font-weight: 400;
+  line-height: 1.7;
+  font-family: Suisse, sans-serif;
+  font-size: 1.4rem;
+}
+.section {
+  padding: 10rem 0rem;
+}
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-two-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-column {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-column {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-five-column {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.container {
+  max-width: 125rem;
+  margin: 0rem auto;
+}
+
+.btn {
+  height: 6rem;
+  padding: 1.9rem 2.3rem;
+  font-family: Suisse, sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80%;
+  border: 1px solid var(--main-bg-color);
+  color: var(--main-bg-color);
+}
+
+.btn:hover,
+.btn:active {
+  background: var(--main-bg-color);
+  color: var(--top-banner-bg-color);
+}
+/*** Re-usable Code End   ***/
+
+/*** Top-Header Section Styling Start ***/
+.topHeaderSection {
+  background: var(--top-header-bg-color);
+  width: 100%;
+  position: relative;
+  padding: 1.1rem;
+  gap: 1.2rem;
+  height: auto;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.topHeaderSection p {
+  font-family: Suisse Regular, sans-serif;
+  font-weight: 400;
+  color: var(--main-color);
+}
+
+.topHeaderSection a {
+  color: var(--main-color);
+  font-family: Suisse Medium, sans-serif;
+  font-weight: 600;
+  transition: all 0.5s linear;
+}
+
+.topHeaderSection a:hover {
+  text-decoration: underline;
+}
+/*** Top-Header Section Styling End   ***/
+
+/*** Banner Section Styling Start ***/
+.bannerSection {
+  position: relative;
+  background: var(--top-banner-bg-color);
+  width: 100%;
+  padding: 1.1rem;
+  height: auto;
+}
+
+.bannerSection button {
+  gap: 3.2rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--main-bg-color);
+  cursor: pointer;
+  font-family: Suisse Regular, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 400;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+  -o-transition: all 0.1s ease 0s;
+}
+
+.bannerSection button:hover,
+.bannerSection button:active {
+  border-bottom: 0.1rem solid var(--main-bg-color);
+}
+
+.bannerSection button i {
+  font-size: 1.1rem;
+  color: #a9a1a1;
+}
+/*** Banner Section Styling End   ***/
+
+/*** Overlay Section Styling Start ***/
+.overlaySection {
+  position: fixed;
+  background: var(--main-bg-color);
+  width: 50vw;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  transform: translateX(100%);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: none;
+}
+
+.overlay-open {
+  transform: translateX(0%);
+  display: block;
+  animation: Overlay_fade 0.3s ease-out forwards;
+}
+
+@keyframes Overlay_fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlaySection a {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.overlayInfo {
+  width: 50%;
+  /* background-color: aqua; */
+  margin: 15rem auto;
+}
+
+.overlayInfo h2 {
+  margin-bottom: 3rem;
+  font-weight: 100;
+}
+
+.border {
+  height: 0.1rem;
+  background: #d3c7c7;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.overlayInfo .grid-two-column {
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.overlayInfo p {
+  color: #666;
+  font-size: 1.3rem;
+}
+/*** Overlay Section Styling End   ***/
+
+/*** Navbar Section Styling Start ***/
+.navbar {
+  position: relative;
+  padding: 2rem 4rem;
+  justify-content: space-between;
+  background: var(--main-bg-color);
+  height: 8rem;
+}
+
+.navbar-list {
+  gap: 2rem;
+}
+
+.navbar-list li .navbarLink {
+  font-size: 1.5rem;
+  font-family: Suisse Medium, sans-serif;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--main-color);
+}
+
+.navbar-list .magnifyLogo {
+  font-size: 1.8rem;
+  color: var(--main-color);
+}
+
+.navbar .btn-group {
+  gap: 5rem;
+}
+
+.navbar .btn-group button {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.5rem;
+}
+/*** Navbar Section Styling End   ***/
+
+/*** Hero Section Styling Start ***/
+.heroSection {
+  position: relative;
+  color: var(--main-bg-color);
+}
+
+.heroSection img {
+  max-width: 100%;
+  display: block;
+  margin: 0rem auto;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageInfo {
+  position: absolute;
+  top: 10rem;
+  left: -3rem;
+  align-items: flex-start;
+}
+
+.imageInfo img {
+  height: 4rem;
+  width: 25rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageInfo h3 {
+  font-size: 1.4rem;
+  font-family: Suisse, sans-serif;
+  font-weight: 700;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.imageInfo h2 {
+  font-family: Suisse Regular, sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  max-width: 34rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.imageInfo p {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  font-weight: 400;
+  font-family: Suisse, sans-serif;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+/*** Hero Section Styling End   ***/
+
+/*** Fragrance Section Styling Start ***/
+.fragranceSection {
+  position: relative;
+  background: var(--main-bg-color);
+}
+
+.fragranceSection::after {
+  position: absolute;
+  right: 0;
+  content: ">";
+  color: var(--main-bg-color);
+  top: 25rem;
+  width: 6vw;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  background: var(--top-banner-bg-color);
+  font-weight: 100;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fragranceSection:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fragranceSection .grid-three-column {
+  gap: 1rem;
+}
+
+.fragranceSection .common-upper-heading {
+  margin-bottom: 0.5rem;
+}
+.fragranceSection .common-heading,
+.fragranceSection .common-para {
+  margin-bottom: 2rem;
+}
+
+.fragranceInfo a {
+  font-size: 1.4rem;
+  font-family: Suisse, sans-serif;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--main-color);
+}
+
+.firstFragrance,
+.secondFragrance {
+  margin-bottom: 3.5rem;
+}
+
+.firstFragrance img,
+.secondFragrance img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0rem auto;
+  padding: 2rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.firstFragrance h5,
+.secondFragrance h5 {
+  color: var(--main-color);
+  font-family: Suisse, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.firstFragrance h5:hover,
+.secondFragrance h5:hover {
+  text-decoration: underline;
+}
+
+.firstFragrance h6,
+.secondFragrance h6 {
+  color: var(--main-color);
+  font-family: Suisse, sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.fragranceSection .pagination {
+  width: 100%;
+  left: 0%;
+  height: 0.2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.fragranceSection .pagination::after {
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 0.2rem;
+  width: 60vw;
+  left: 100%;
+}
+/*** Fragrance Section Styling End   ***/
+
+/*** SkinCare Section Styling Start ***/
+.skincareSection {
+  position: relative;
+  background: var(--main-bg-color);
+}
+
+.skincareSection .common-upper-heading,
+.skincareSection .common-heading,
+.skincareSection .common-para {
+  margin-bottom: 2rem;
+}
+
+.skincareSection .common-heading {
+  max-width: 35rem;
+}
+
+.skincareSection .common-para {
+  font-size: 1.7rem;
+  max-width: 37.5rem;
+}
+
+.skinCareImage img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0rem auto;
+  padding: 2rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.skinCareInfo .btn {
+  border-color: rgba(51, 51, 51, 0.2);
+  color: var(--main-color);
+  font-weight: 500;
+  max-width: 56%;
+}
+
+.skinCareInfo .btn:hover {
+  background: var(--top-banner-bg-color);
+  color: var(--main-bg-color);
+}
+/*** SkinCare Section Styling End   ***/
+
+/*** Decoding Section Styling Start ***/
+.decodingSection {
+  position: relative;
+  background: var(--main-bg-color);
+}
+
+.decodingSection .grid {
+  gap: 10rem;
+}
+
+.decodingVideo {
+  height: 100%;
+  width: 100%;
+}
+
+.decodingVideo video {
+  max-width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.decodingSection .common-upper-heading,
+.decodingSection .common-heading,
+.decodingSection .common-para {
+  margin-bottom: 2rem;
+}
+
+.decodingSection .common-para {
+  font-size: 1.7rem;
+  max-width: 37.5rem;
+}
+
+.decodingInfo .btn {
+  border-color: rgba(51, 51, 51, 0.2);
+  color: var(--main-color);
+  font-weight: 500;
+  max-width: 56%;
+}
+
+.decodingInfo .btn:hover {
+  background: var(--top-banner-bg-color);
+  color: var(--main-bg-color);
+}
+/*** Decoding Section Styling End   ***/
+
+/*** Climate Section Styling Start ***/
+.climateSection {
+  position: relative;
+  background: var(--main-bg-color);
+}
+
+.climateSection::after {
+  position: absolute;
+  right: 0;
+  content: ">";
+  color: var(--main-bg-color);
+  top: 25rem;
+  width: 6vw;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  background: var(--top-banner-bg-color);
+  font-weight: 100;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.climateSection:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.climateSection .grid-three-column {
+  gap: 1rem;
+}
+
+.climateSection .common-upper-heading {
+  margin-bottom: 0.5rem;
+}
+.climateSection .common-heading,
+.climateSection .common-para {
+  margin-bottom: 2rem;
+}
+
+.climateSection .firstFragrance,
+.climateSection .secondFragrance {
+  margin-bottom: 3.5rem;
+}
+
+.climateSection .firstFragrance img,
+.climateSection .secondFragrance img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0rem auto;
+  padding: 2rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.climateSection .firstFragrance h5,
+.climateSection .secondFragrance h5 {
+  color: var(--main-color);
+  font-family: Suisse, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.climateSection .firstFragrance h5:hover,
+.climateSection .secondFragrance h5:hover {
+  text-decoration: underline;
+}
+
+.climateSection.firstFragrance h6,
+.climateSection.secondFragrance h6 {
+  color: var(--main-color);
+  font-family: Suisse, sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.climateSection .pagination {
+  width: 100%;
+  left: 0%;
+  height: 0.2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.climateSection .pagination::after {
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 0.2rem;
+  width: 60vw;
+  left: 100%;
+}
+/*** Climate Section Styling End   ***/
+
+/*** Store Section Styling Start ***/
+.storeSection {
+  position: relative;
+  background: var(--main-bg-color);
+}
+
+.storeSection .common-para {
+  font-size: 1.6rem;
+  max-width: 29rem;
+}
+
+.storeInfo .btn {
+  border-color: rgba(51, 51, 51, 0.2);
+  color: var(--main-color);
+  font-weight: 500;
+  max-width: 56%;
+}
+
+.storeInfo .btn:hover {
+  background: var(--top-banner-bg-color);
+  color: var(--main-bg-color);
+}
+
+.storeSection .common-heading,
+.storeSection .common-para {
+  margin-bottom: 2rem;
+}
+
+.storeSlider img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0rem auto;
+  padding: 2rem;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 5rem;
+}
+
+.storeSection .pagination {
+  width: 60%;
+  left: 0%;
+  height: 0.2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.storeSection .pagination::after {
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 0.2rem;
+  width: 67%;
+  left: 100%;
+}
+/*** Store Section Styling End   ***/
+
+/*** Facial Section Styling Start ***/
+.facialSection {
+  position: relative;
+  background: var(--main-bg-color);
+}
+
+.facialSection .grid {
+  gap: 10rem;
+}
+
+.facialSection .common-para {
+  font-size: 1.6rem;
+  max-width: 29rem;
+}
+
+.facialInfo .btn {
+  border-color: rgba(51, 51, 51, 0.2);
+  color: var(--main-color);
+  font-weight: 500;
+  max-width: 56%;
+}
+
+.facialInfo .btn:hover {
+  background: var(--top-banner-bg-color);
+  color: var(--main-bg-color);
+}
+
+.facialSection .common-upper-heading,
+.facialSection .common-heading,
+.facialSection .common-para {
+  margin-bottom: 2rem;
+}
+
+.facialImage img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0rem auto;
+  padding: 2rem;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 5rem;
+}
+
+.facialInfo .common-heading,
+.facialInfo .common-para {
+  max-width: 35rem;
+}
+/*** Facial Section Styling End   ***/
+
+/*** Nothing Section Styling Start ***/
+.nothingSection {
+  position: relative;
+  background: var(--main-bg-color);
+}
+
+.nothingSection .quote {
+  font-weight: 100;
+  color: var(--main-color);
+  line-height: 1.33;
+  font-family: Zapf Humanist, serif;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.nothingSection .common-para {
+  text-align: center;
+  font-weight: 500;
+}
+/*** Nothing Section Styling End   ***/
+
+/*** Footer Section Styling Start ***/
+.footerSection {
+  position: relative;
+  padding: 5rem 0rem;
+  min-height: 30vh;
+  background: var(--top-banner-bg-color);
+  color: var(--main-bg-color);
+}
+
+.subscribe,
+.sustain {
+  width: 45rem;
+}
+
+.subscribe h3,
+.order h3,
+.services h3,
+.location h3,
+.sustain h3,
+.about h3,
+.socialMedia h3 {
+  font-size: 1.5rem;
+  line-height: 2;
+  font-family: Suisse, sans-serif;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.subscribe .border,
+.order .border,
+.services .border,
+.location .border,
+.sustain .border,
+.about .border,
+.socialMedia .border {
+  background: var(--main-bg-color);
+  height: 0.1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.footerSection .grid-four-column {
+  gap: 5rem;
+}
+
+.subscribe .emailInput {
+  background: transparent;
+  border: 0.1rem solid var(--main-bg-color);
+  border-radius: 0.3rem;
+  height: 3.7rem;
+  color: var(--main-bg-color);
+  outline: none;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.subscribe .emailInput::placeholder {
+  color: var(--main-bg-color);
+}
+
+.checkBoxModule {
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: baseline;
+}
+
+.checkBoxModule .common-para,
+.sustain .common-para {
+  color: var(--main-bg-color);
+  font-size: 1.3rem;
+}
+
+.checkBoxModule .common-para a {
+  color: var(--main-bg-color);
+  text-decoration: underline;
+}
+
+.order .link,
+.services .link,
+.location .link,
+.about .link,
+.socialMedia .link {
+  color: var(--main-bg-color);
+  line-height: 2.5;
+  font-family: Suisse, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.footerSection .group {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.footerSection .footerBanner {
+  width: 100%;
+  background: var(--main-bg-color);
+  height: 0.3rem;
+  margin-bottom: 2.5rem;
+}
+
+.footerSection .copyright {
+  font-family: Suisse Regular, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+/*** Footer Section Styling End   ***/
+
+/*** Chat Section Styling Start ***/
+.messageButton {
+  background: var(--top-banner-bg-color);
+  border: 0.1rem solid var(--main-bg-color);
+  border-radius: 50%;
+  padding: 1.2rem;
+  cursor: pointer;
+  position: fixed;
+  right: 6rem;
+  bottom: 11rem;
+}
+
+.messageButton i {
+  color: var(--main-bg-color);
+  fill: var(--main-bg-color);
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.chatSection {
+  background-color: rgb(255, 255, 255);
+  color: rgb(47, 57, 65);
+  width: 25vw;
+  height: 85vh;
+  position: fixed;
+  right: 3rem;
+  top: 0rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0.428571rem 0px;
+  border-radius: 0.571429rem;
+  font-family: Suisse Regular, sans-serif;
+  transform: translateY(100%);
+  transition: all 0.5s linear;
+  z-index: 50;
+  /* overflow-x: auto; */
+  display: none;
+}
+
+.cart-open {
+  transform: translateY(0);
+  display: block;
+}
+
+.chatHeading .common-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--main-color);
+  line-height: 1.5;
+}
+
+.chatHeading .minusBtn {
+  position: relative;
+  left: 13rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.chatHeading .minusBtn:hover {
+  background-color: rgb(240, 238, 141);
+}
+
+.chatSection .assistance,
+.chatSection .message {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 4rem;
+  height: 5.35714rem;
+  box-shadow: 0 0.07143rem 0.57143rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.28571rem;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  font-size: 1.3rem;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.chatSection .assistance h3,
+.chatSection .message h3 {
+  font-weight: normal;
+  text-align: center;
+}
+
+.assistance i,
+.message i {
+  font-size: 3rem;
+  color: rgb(49, 152, 236);
+}
+/*** Chat Section Styling End   ***/
+
+/*** Media Queries Started ***/
+@media only screen and (max-width: 1150px) {
+  html {
+    font-size: 56.25%;
+    /* 1rem = 9px */
+  }
+  .container {
+    max-width: 110rem;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .navbar-list li:nth-child(1),
+  .navbar-list li:nth-child(2),
+  .navbar-list li:nth-child(3),
+  .navbar-list li:nth-child(4),
+  .navbar-list li:nth-child(5),
+  .navbar-list li:nth-child(6),
+  .navbar-list li:nth-child(10) {
+    display: none;
+  }
+  .container {
+    max-width: 100rem;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  html {
+    font-size: 50%;
+    /* 1rem = 8px */
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .container {
+    max-width: 90rem;
+  }
+  .imageInfo {
+    top: 2rem;
+  }
+  .footerSection .grid-four-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 730px) {
+  .container {
+    max-width: 80rem;
+  }
+  html {
+    font-size: 43.75%;
+    /* 1rem = 7px */
+  }
+}
+@media only screen and (max-width: 600px) {
+  .imageInfo {
+    display: none;
+  }
+  .secondFragrance {
+    display: none;
+  }
+  .fragranceSection .pagination,
+  .climateSection .pagination {
+    display: none;
+  }
+  .fragranceSection .grid-three-column,
+  .climateSection .grid-three-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fragranceInfo {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10rem 0rem;
+  }
+  .chatSection{
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+  }
+  .chatHeading .minusBtn {
+    left: 20rem;
+  }
+  .chatSection .assistance, .chatSection .message {
+    margin: 20rem auto;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .container{
+    max-width: 70rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .fragranceSection .grid-three-column, .skincareSection .grid-two-column, .decodingSection .grid-two-column, .climateSection .grid-three-column, .storeSection .grid-two-column, .facialSection .grid-two-column, .footerSection .grid-four-column{
+    grid-template-columns: repeat(1, 1fr);
+}
+  .fragranceInfo{
+    align-items: center;
+  }
+  .skinCareInfo, .decodingInfo, .storeInfo, .facialInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .fragranceSection .common-para, .climateSection .common-para{
+    text-align: center;
+}
+.decodingVideo video{
+  display: block;
+  margin: 0rem auto;
+}
+
+.storeSection .aesopPara{
+  text-align: center;
+}
+.order .border, .services .border, .location .border, .about .border, .socialMedia .border{
+  width: 45rem;
+}
+.footerSection{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+@media only screen and (max-width: 350px) {
+html{
+  font-size: 37.5%;
+}
+}
+/*** Media Queries Ended   ***/
